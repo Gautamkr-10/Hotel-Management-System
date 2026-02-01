@@ -1,20 +1,14 @@
-# Use Eclipse Temurin OpenJDK 17 (works on Render)
-FROM eclipse-temurin:17-jdk
+# Use a Java 21 base image
+FROM eclipse-temurin:21-jdk-focal
 
-# Set working directory
 WORKDIR /app
 
-# Copy backend files
+# Copy project files
 COPY . .
 
-# Make Maven wrapper executable
-RUN chmod +x mvnw
-
-# Build project (skip tests)
+# Build project
 RUN ./mvnw clean package -DskipTests
 
-# Expose port
 EXPOSE 8080
 
-# Run the Spring Boot JAR (replace with your actual jar name)
-CMD ["java", "-jar", "target/hotel-management-system-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/HotelManagementSystem-0.0.1-SNAPSHOT.jar"]
