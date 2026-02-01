@@ -1,0 +1,10 @@
+# Node
+frontend/node_modules
+frontend/.env
+
+# Java / Spring Boot
+backend/target
+backend/.env
+
+# Logs
+*.log
