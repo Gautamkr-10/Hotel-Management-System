@@ -45,14 +45,16 @@ public class SecurityConfig {
         http
             .csrf(AbstractHttpConfigurer::disable)
             .cors(Customizer.withDefaults())   // 🔥 REQUIRED FOR CORS
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers(
-                        "/auth/**",
-                        "/rooms/**",
-                        "/bookings/**"
-                ).permitAll()
-                .anyRequest().authenticated()
-            )
+        .authorizeHttpRequests(auth -> auth
+    .requestMatchers(
+        "/auth/**",
+        "/rooms/**",
+        "/bookings/**"
+    ).permitAll()
+    .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
+    .anyRequest().authenticated()
+)
+
             .sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
