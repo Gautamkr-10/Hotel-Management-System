@@ -1,7 +1,7 @@
 package in.hotel.config;
 
 import in.hotel.entity.User;
-import in.hotel.repository.UserRepository;
+import in.hotel.repo.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
