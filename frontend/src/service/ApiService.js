@@ -2,7 +2,12 @@ import axios from "axios"
 
 export default class ApiService {
 
+<<<<<<< HEAD
     static BASE_URL = process.env.REACT_APP_BACKEND_URL
+=======
+    // static BASE_URL = "http://localhost:4040"
+    static BASE_URL = "https://hotelmanagementsystem-1-b7ox.onrender.com"
+>>>>>>> 623c97c (Fix API base URL and secure configs)
 
 
     static getHeader() {
