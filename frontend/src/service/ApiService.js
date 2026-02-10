@@ -16,16 +16,33 @@ export default class ApiService {
     /**AUTH */
 
     /* This  register a new user */
-    static async registerUser(registration) {
-        const response = await axios.post(`${this.BASE_URL}/auth/register`, registration)
-        return response.data
-    }
+   static async registerUser(registration) {
+    const response = await axios.post(
+        `${this.BASE_URL}/auth/register`,
+        registration,
+        {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+    );
+    return response.data;
+}
+
 
     /* This  login a registered user */
-    static async loginUser(loginDetails) {
-        const response = await axios.post(`${this.BASE_URL}/auth/login`, loginDetails)
-        return response.data
-    }
+  static async loginUser(loginDetails) {
+    const response = await axios.post(
+        `${this.BASE_URL}/auth/login`,
+        loginDetails,
+        {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+    );
+    return response.data;
+}
 
     /***USERS */
 
